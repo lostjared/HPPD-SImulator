@@ -1,0 +1,3 @@
+all:
+	g++ light.cc -o light -framework mx -framework Cocoa -lSDLmain
+

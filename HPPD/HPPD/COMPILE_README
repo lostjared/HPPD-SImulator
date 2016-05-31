@@ -1,0 +1,7 @@
+ 
+just type 
+
+$ make
+
+if that dosent work, than try opening the Makefile and editing the path to SDL
+

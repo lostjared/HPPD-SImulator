@@ -1,0 +1,23 @@
+#Modify Makefile for your instalation of SDL
+
+
+#what compiler we are using
+CC=i586-mingw32msvc-g++ 
+#the path to SDL config
+SDLPATH=/usr/local/i586-mingw32/bin
+
+all: hppd
+
+
+doubleup.o: doubleup.cpp
+	$(CC) doubleup.cpp -c `${SDLPATH}/sdl-config --cflags`
+rez.o:
+	i586-mingw32msvc-windres mp.rc -o rez.o
+
+hppd: doubleup.o rez.o
+	$(CC) doubleup.o rez.o -o hppd.exe -static `${SDLPATH}/sdl-config --static-libs` -luser32 -lgdi32 -lwinmm
+		
+
+clean:
+	rm -f *.o *~
+
