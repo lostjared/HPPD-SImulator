@@ -41,7 +41,6 @@ public:
 			return -1;
 		}
 		SDL_WM_SetCaption(title, NULL);
-		printf("SDL Surface Created %x\n", pscr);
 		printf("Successfully initalized\n");
 		scr = 0;
 		is_fullscreen = fullscreen;
@@ -53,7 +52,7 @@ public:
 		return is_fullscreen;
 	}
 
-	int init(char *title, int width, int height, int bpp, bool fullscreen)
+	int init(const char *title, int width, int height, int bpp, bool fullscreen)
 	{
 		if( SDL_Init(SDL_INIT_VIDEO | SDL_INIT_JOYSTICK) < 0 )
 		{
@@ -72,7 +71,6 @@ public:
 			return -1;
 		}
 		SDL_WM_SetCaption(title, NULL);
-		printf("SDL Surface Created %x\n", pscr);
 		printf("Successfully initalized\n");
 		scr = 0;
 

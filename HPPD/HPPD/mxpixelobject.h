@@ -32,11 +32,13 @@ void ArrayOf::setDirection ( int x, int y, int direction ) // set direction memb
 void ArrayOf::render() // render to the screen
 {
 	logic();
-	if ( mx != 0 )
+	if ( mx != 0 ) {
 		if ( which == 0 ) // set by rgb
 			mx->setPixel ( mx->pscr,x_pos,y_pos,color_r,color_g,color_b );
 		else // set by unsigned integer
 			mx->setPixel ( mx->pscr,x_pos,y_pos,color );
+	
+	}
 
 }
 

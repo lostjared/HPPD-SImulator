@@ -4,7 +4,7 @@
 #include<stdlib.h> // stdlib standard library include for rand and other functions
 #include<time.h> // time.h for time
 #include<string>
-
+#include<unistd.h>
 // function prototypes
 
 void mix_in_image(); // for fade from one picture to the other
