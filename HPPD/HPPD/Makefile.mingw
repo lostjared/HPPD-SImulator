@@ -2,20 +2,21 @@
 
 
 #what compiler we are using
-CC=i586-mingw32msvc-g++ 
+CC=x86_64-w64-mingw32-g++
+#WINDRES=x86_64-w64-mingw32-windres
 #the path to SDL config
-SDLPATH=/usr/local/i586-mingw32/bin
+SDLPATH=$(MINGW_PATH)/bin
 
 all: hppd
 
 
 doubleup.o: doubleup.cpp
 	$(CC) doubleup.cpp -c `${SDLPATH}/sdl-config --cflags`
-rez.o:
-	i586-mingw32msvc-windres mp.rc -o rez.o
+#rez.o:
+#	$(WINDRES)  mp.rc -o rez.o
 
-hppd: doubleup.o rez.o
-	$(CC) doubleup.o rez.o -o hppd.exe -static `${SDLPATH}/sdl-config --static-libs` -luser32 -lgdi32 -lwinmm
+hppd: doubleup.o 
+	$(CC) doubleup.o -o hppd.exe -static `${SDLPATH}/sdl-config --static-libs` -luser32 -lgdi32 -lwinmm
 		
 
 clean:
