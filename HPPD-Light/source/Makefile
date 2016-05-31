@@ -1,2 +1,7 @@
+FLAGS= `pkg-config mx sdl --cflags --libs`
+
 all:
-	g++ light.cc -o light `pkg-config mx sdl --cflags --libs` -ljpeg
+	$(CXX) light.cc -o light-hppd $(FLAGS)
+clean:
+	rm -f light-hppd
+
